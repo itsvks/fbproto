@@ -1,0 +1,116 @@
+<section id="profile">
+	<div class="col-md-12">
+		<h1 class="page-header">Profile</h1>
+		<ol class="breadcrumb">
+			<li class="active">
+				<i class="fa fa-bar-chart-o"></i> Profile
+			</li>
+		</ol>
+	</div>
+
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-2">
+				<span ng-if="profileimg == false">
+					<img  src="static/img/profilephoto.png" class="img-thumbnail" />
+				</span>
+				<span ng-if="profileimg == true">
+					<img ng-src="media/{$ profilepic $}" class="img-thumbnail" />
+				</span>
+				<div class="updatepic">
+					<span>Update</span>
+					<input type="file"accept="image/*" class="chooseimg" id="profile_pic" file-type="image"  file-model="image($files,$errors)"/>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="highlight">
+					<h4>
+						<span class="pull-left">PERSONAL</span>
+						<span class="pull-right editing" ng-click="editmode()" ng-hide="editing"><i class="fa fa-edit"></i> Edit</span>
+						<span class="pull-right editing" ng-click="reset()" ng-show="editing"><i class="fa fa-undo"></i> Cancel</span>
+					</h4>
+					<br/>
+					<div class="col-md-4">
+						<h5>Name</h5>
+						<p>{$ details.first_name+' '+details.last_name $}</p>
+					</div>
+					<div class="col-md-4">
+						<h5>Email ID</h5>
+						<p>{$ details.email $}</p>
+					</div>
+					<div class="col-md-4">
+						<h5>Mobile Number</h5>
+						<p>{$ details.mobile_number $}</p>
+					</div>
+				</div>
+				<div class="highlight" ng-hide="editing">
+					<h4>ABOUT</h4>
+					<br/>
+					<div class="col-md-4">
+						<h5>Age {$ details.age $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Current City {$ details.current_city $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Home Town {$ details.home_town $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Workplace {$ details.workplace $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>College {$ details.college $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Relationship Status {$ details.relationship $}</h5>
+					</div>
+				</div>
+				<div class="highlight" ng-show="editing">
+					<h4>Manage Your Details</h4>
+					<form role="form" name="updateProfileForm" ng-submit="updateProfile(updateProfileForm)" novalidate>
+						<div class="form-group">
+							<label for="id_mobile">Mobile Number</label>
+							<input type="text" class="form-control" id="id_mobile" placeholder="Enter Mobile Number" ng-model="profileData.mobile_number">
+						</div>
+						<div class="form-group">
+							<label for="id_age">Age</label>
+							<input type="text" class="form-control" id="id_age" placeholder="Enter Age" ng-model="profileData.age">
+						</div>
+						<div class="form-group">
+							<label for="id_current_city">Current City</label>
+							<input type="text" class="form-control" id="id_current_city" placeholder="Enter Current City" ng-model="profileData.current_city">
+						</div>
+						<div class="form-group">
+							<label for="id_home_town">Home Town</label>
+							<input type="text" class="form-control" id="id_home_town" placeholder="Enter Home Town" ng-model="profileData.home_town">
+						</div>
+						<div class="form-group">
+							<label for="id_workplace">Workplace</label>
+							<input type="text" class="form-control" id="id_workplace" placeholder="Enter Workplace" ng-model="profileData.workplace">
+						</div>
+						<div class="form-group">
+							<label for="id_college">College</label>
+							<input type="text" class="form-control" id="id_college" placeholder="Enter College" ng-model="profileData.college">
+						</div>
+						<div class="form-group">
+							<label>Relationship Status</label>
+							<select class="form-control" name="status" ng-model="profileData.relationship">
+								<option value="0">---</option>
+								<option value="Single">Single</option>
+								<option value="In a relationship">In a relationship</option>
+								<option value="Engaged">Engaged</option>
+								<option value="Married">Married</option>
+								<option value="In an open relationship">In an open relationship</option>
+								<option value="It's complicated">It's complicated</option>
+								<option value="Separated">Separated</option>
+								<option value="Divorced">Divorced</option>
+								<option value="Widowed">Widowed</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

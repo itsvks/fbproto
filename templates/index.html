@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="fbProto">
+<head>
+    <title>FBPRROTO</title>
+    <meta charset="utf-8">
+    <meta content="IE=edges" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="fragment" content="!">
+
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+
+    <link rel="stylesheet" type="text/css" href="static/css/extrastyles.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/angular-toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body ng-controller="MasterCtrl">
+
+<div ui-view ng-class="{'wrapper':loggedIn}"></div>
+
+<script src="static/js/vendor/angular.min.js"></script>
+<script src="static/js/vendor/angular-resource.min.js"></script>
+<script src="static/js/vendor/angular-animate.min.js"></script>
+<script src="static/js/vendor/angular-cookie.min.js"></script>
+<script src="static/js/vendor/angular-sanitize.min.js"></script>
+<script src="static/js/vendor/angular-ui-router.min.js"></script>
+<script src="static/js/vendor/ui-bootstrap-tpls.js"></script>
+<script src="static/js/vendor/ng-img-crop.js"></script>
+<script src="static/js/vendor/angular-toastr.tpls.min.js"></script>
+
+<!--MAIN APP-->
+<script src="static/js/apps/app.js"></script>
+
+<!--Services-->
+<script src="static/js/apps/services/djangoauth.js"></script>
+
+<!--CONTROLLERS-->
+<script src="static/js/apps/controller/master.js"></script>
+<script src="static/js/apps/controller/login.js"></script>
+<script src="static/js/apps/controller/logout.js"></script>
+<script src="static/js/apps/controller/register.js"></script>
+<script src="static/js/apps/controller/dashboard/dashboard.js"></script>
+<script src="static/js/apps/controller/dashboard/profile.js"></script>
+<!--DIRECTIVES-->
+<script src="static/js/apps/directives/directive.js"></script>
+
+</body>
+</html>

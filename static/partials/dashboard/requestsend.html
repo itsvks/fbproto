@@ -1,0 +1,75 @@
+<section>
+	<div class="col-md-12">
+		<h1 class="page-header">Friend Request Sent</h1>
+		<ol class="breadcrumb">
+			<li class="active">
+				<i class="fa fa-bar-chart-o"></i> Friend Request Sent
+			</li>
+		</ol>
+	</div>
+
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<accordion ng-hide="norequest">
+				<accordion-group heading="{$list.first_name $}" ng-repeat="list in lists" ng-click="friendDetail(list.friend_request)">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-2">
+								<span ng-if="details.profile_image == ''">
+									<img  src="static/img/profilephoto.png" width="145" class="img-circle" />
+								</span>
+								<span ng-if="details.profile_image != ''">
+									<img ng-src="media/{$ details.profile_image[0].image $}" width="145" class="img-circle" />
+								</span>
+								<div class="text-center friendBtn">
+									<p class="btn btn-primary">Friend Request Sent</p>
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="highlight">
+									<h4>PERSONAL</h4>
+									<br/>
+									<div class="col-md-4">
+										<h5>Name</h5>
+										<p>{$ details.first_name+' '+details.last_name $}</p>
+									</div>
+									<div class="col-md-4">
+										<h5>Email ID</h5>
+										<p>{$ details.email $}</p>
+									</div>
+									<div class="col-md-4">
+										<h5>Mobile Number</h5>
+										<p>{$ details.profile[0].mobile_number $}</p>
+									</div>
+								</div>
+								<div class="highlight">
+									<h4>ABOUT</h4>
+									<br/>
+									<div class="col-md-4">
+										<h5>Age {$ details.profile[0].age $}</h5>
+									</div>
+									<div class="col-md-4">
+										<h5>Current City {$ details.profile[0].current_city $}</h5>
+									</div>
+									<div class="col-md-4">
+										<h5>Home Town {$ details.profile[0].home_town $}</h5>
+									</div>
+									<div class="col-md-4">
+										<h5>Workplace {$ details.profile[0].workplace $}</h5>
+									</div>
+									<div class="col-md-4">
+										<h5>College {$ details.profile[0].college $}</h5>
+									</div>
+									<div class="col-md-4">
+										<h5>Relationship Status {$ details.profile[0].relationship $}</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</accordion-group>
+			</accordion>
+			<p ng-show="norequest">No Request Sent.</p>
+		</div>
+	</div>
+</section>

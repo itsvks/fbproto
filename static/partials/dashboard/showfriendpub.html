@@ -1,0 +1,65 @@
+<section id="profile">
+	<div class="col-md-12">
+		<h1 class="page-header"> Public Profile</h1>
+		<ol class="breadcrumb">
+			<li class="active">
+				<i class="fa fa-bar-chart-o"></i> Public Profile
+			</li>
+		</ol>
+	</div>
+
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-2">
+				<span ng-if="friendPub.profile_image == ''">
+					<img  src="static/img/profilephoto.png" class="img-thumbnail" />
+				</span>
+				<span ng-if="friendPub.profile_image != ''">
+					<img ng-src="media/{$ friendPub.profile_image[0].image $}" class="img-thumbnail" />
+				</span>
+				<div class="text-center friendBtn">
+					<a ng-show="!pubFriendProfile.is_friend && !pubFriendProfile.is_friend_request_sent && !pubFriendProfile.is_friend_request_received" ng-click="addFriend(friendPub.id)" class="btn btn-primary"><i class="fa fa-user-plus"></i> Add Friend</a>
+					<p ng-show="pubFriendProfile.is_friend_request_sent && !pubFriendProfile.is_friend && !pubFriendProfile.is_friend_request_received" ng-click="" class="btn btn-primary">Friend Request Sent</p>
+					<a ng-show="!pubFriendProfile.is_friend && !pubFriendProfile.is_friend_request_sent && pubFriendProfile.is_friend_request_received" ng-click="acceptFriend(friendPub.id)" class="btn btn-primary">Respond Request</a>
+					<a ng-show="pubFriendProfile.is_friend" ng-click="unFriend(friendPub.id)" class="btn btn-primary">Unfriend</a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="highlight">
+					<h4>PERSONAL</h4>
+					<br/>
+					<div class="col-md-6">
+						<h5>Name</h5>
+						<p>{$ pubFriendProfile.first_name+' '+pubFriendProfile.last_name $}</p>
+					</div>
+					<div class="col-md-6">
+						<h5>Email ID</h5>
+						<p>{$ pubFriendProfile.email $}</p>
+					</div>
+				</div>
+				<div class="highlight">
+					<h4>ABOUT</h4>
+					<br/>
+					<div class="col-md-4">
+						<h5>Age {$ pubFriendProfile.profile[0].age $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Current City {$ pubFriendProfile.profile[0].current_city $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Home Town {$ pubFriendProfile.profile[0].home_town $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Workplace {$ pubFriendProfile.profile[0].workplace $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>College {$ pubFriendProfile.profile[0].college $}</h5>
+					</div>
+					<div class="col-md-4">
+						<h5>Relationship Status {$ pubFriendProfile.profile[0].relationship $}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

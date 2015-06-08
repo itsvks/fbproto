@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+
+.idea
+
+#Skip media
+media/
+
+#Skip DB
+*.sqlite3
